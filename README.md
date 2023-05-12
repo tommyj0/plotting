@@ -1,6 +1,7 @@
 # Usage 
 
 ## Functions
+
 ```c
 xlabel(char[] xlabel_text) // adds a label to the x axis. Passing an empty string will default to "x-axis"
 ylabel(char[] ylabel_text) // adds a label to the y axis. Passing an empty string will default to "y-axis"
@@ -11,6 +12,7 @@ plot(float x_values[],float y_values[],int size) // plots arrays, y against x. P
 ```
 
 ## Example code 
+
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -35,4 +37,13 @@ int main(void){
     plot(xarr,yarr,N); // plot(x array, y array, size);
     return 0;
 }
+```
+
+## Compiling
+
+Copy include folder and run the following: 
+```bash
+gcc -Wall -Wextra -o bin/main src/main.c -lm -std=c17 -I include 
+
+.\bin\main
 ```
