@@ -16,7 +16,7 @@ int main(void){
     xlabel("radians");
     ylabel("");
     title("random sinusoidal");
-    path("out/myplot.jpg"); // optional path specification
+    path("out/myplot.png"); // optional path specification
     grid(15); // optional to add a grid
     plot(xarr,yarr,N); // plot(x array, y array, size);
     return 0;

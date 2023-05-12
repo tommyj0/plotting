@@ -32,9 +32,9 @@ int main(void){
     xlabel("radians");
     ylabel("");
     title("");
-    path("out/myplot.jpg"); // optional path specification
-    grid(15); // optional to add a grid
-    plot(xarr,yarr,N); // plot(x array, y array, size);
+    path("out/myplot.jpg"); 
+    grid(15); 
+    plot(xarr,yarr,N); 
     return 0;
 }
 ```

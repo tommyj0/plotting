@@ -536,21 +536,32 @@ void save_image_as_png(const char *path){
     }
 
     int p_len = (int)strlen(path);
-
-    if (path[p_len - 4] == '.' && path[p_len - 3] == 'p' && path[p_len - 2] == 'n' && path[p_len - 1] == 'g'){
-        stbi_write_png(path, WIDTH, WIDTH, CHANNEL_NUM, image_write, WIDTH * CHANNEL_NUM);
-        printf("-- PNG file successfully created and saved as %s --\n", path);
+    char jpg[] = ".jpg";
+    char png[] = ".png";
+    int i, j;
+    for (i = 0; i < 4; ++i){
+        if (path[p_len  + i - 4] != jpg[i])
+            break;
     }
-    else if (path[p_len - 4] == '.' && path[p_len - 3] == 'j' && path[p_len - 2] == 'p' && path[p_len - 1] == 'g'){
+    if (i == 4){
         stbi_write_jpg(path, WIDTH, HEIGHT, 3, image_write, 100);
         printf("-- JPEG file successfully created and saved as %s --\n", path);
-    }
-    else {
-        printf("ERROR: invalid path - ensure the path string ends in .png or .jpg\n");
-        exit(1);
+        free(image_write);
+        return;
     }
 
-    free(image_write);
+    for (j = 0; j < 4; ++j){
+        if (path[p_len + j - 4] != png[j])
+            break;
+    }
+    if (j == 4){
+        stbi_write_png(path, WIDTH, WIDTH, CHANNEL_NUM, image_write, WIDTH * CHANNEL_NUM);
+        printf("-- PNG file successfully created and saved as %s --\n", path);
+        free(image_write);
+        return;
+    }
+    printf("ERROR: invalid path - ensure the path string ends in .png or .jpg\n");
+    exit(1);
 }
 
 float max_value(float input_array[]){
