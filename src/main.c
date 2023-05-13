@@ -4,7 +4,7 @@
 #define N 5000
 
 int main(void){
-    // test plots
+    // test plot
     int reps = 1;
     float xarr[N];
     float yarr[N];
@@ -16,8 +16,8 @@ int main(void){
     xlabel("radians");
     ylabel("");
     title("random sinusoidal");
-    path("out/myplot.png"); // optional path specification
-    grid(15); // optional to add a grid
-    plot(xarr,yarr,N); // plot(x array, y array, size);
+    path("out/myplot.png"); 
+    grid(15); 
+    plot(xarr,yarr,N); // plot called last
     return 0;
 }
