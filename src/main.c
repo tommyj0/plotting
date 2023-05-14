@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "plotting.c"
+#include "plotting.h"
 #define N 5000
 
 int main(void){
@@ -9,7 +9,7 @@ int main(void){
     float xarr[N];
     float yarr[N];
     for (int i = 0; i < N; ++i){
-        float point = (2*PI*i*reps)/N;
+        float point = (2*3.14*i*reps)/N;
         xarr[i] = i;
         yarr[i] = 2 + (-sin(point) + cos(point)*cos(point))*i;
     }

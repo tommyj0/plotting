@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stddef.h": "c",
+        "assert.h": "c",
+        "stb_image_write.h": "c"
+    }
+}
