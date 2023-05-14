@@ -13,7 +13,7 @@
 #define PLOT_WIDTH WIDTH - 2*PLOT_BORDER - 2*BORDER
 #define PLOT_HEIGHT HEIGHT - 2*PLOT_BORDER - 2*BORDER
 #define CHANNEL_NUM 3
-#define PI 3.14
+#define PI 3.14159
 
 // defaults
 #define DEFAULT_FILE_PATH "plot.png"
