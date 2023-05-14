@@ -1,52 +1,3 @@
-/* 
-
-### USAGE ### 
-
-FUNCTIONS:
-
-xlabel(char[] xlabel_text) // optional - adds a label to the x axis, defaults to "x-axis"
-ylabel(char[] ylabel_text) // optional - adds a label to the y axis, defaults to "y-axis"
-title(char[] title_text) // optional - adds a plot title, defaults to "plot title"
-grid(int grid_density) // optional - adds a grid in the density of the passed integer, defaults to 10
-path(char file_path[]) // optional - set the file path and name, defaults to "plot.png"
-plot(float x_values[],float y_values[],int size) // plots arrays, y against x, pass shared size of arrays
-
-EXAMPLE CODE
-
-#include <stdio.h>
-#include <math.h>
-#include "plotting.c"
-#define N 5000
-
-int main(void){
-    // test plot
-    int reps = 1;
-    float xarr[N];
-    float yarr[N];
-    for (int i = 0; i < N; ++i){
-        float point = (2*PI*i*reps)/N;
-        xarr[i] = i;
-        yarr[i] = 2 + (-sin(point) + cos(point)*cos(point))*i;
-    }
-    xlabel("radians");
-    ylabel("");
-    title("random sinusoidal");
-    path("out/myplot.png"); 
-    grid(15); 
-    plot(xarr,yarr,N); // plot called last
-    return 0;
-}
-
-COMPILING
-
-Copy the include folder and run the following: 
-
-gcc -Wall -Wextra -o [OUTPUT PATH] [FILE PATH].c -lm -std=c17 -I include 
-
-.\bin\main
-
-*/
-
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
@@ -61,7 +12,7 @@ gcc -Wall -Wextra -o [OUTPUT PATH] [FILE PATH].c -lm -std=c17 -I include
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
-#include "font.c"
+#include "font.h"
 
 // DEFINITIONS
 // image resolution
@@ -80,7 +31,7 @@ gcc -Wall -Wextra -o [OUTPUT PATH] [FILE PATH].c -lm -std=c17 -I include
 #define DEFAULT_TITLE "plot title"
 #define DEFAULT_X_LABEL "x-axis"
 #define DEFAULT_Y_LABEL "y-axis"
-#define DOT_SIZE 3
+#define DOT_SIZE 2
 #define GRID_DENSITY 10
 
 // colours in hex 
