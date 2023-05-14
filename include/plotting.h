@@ -20,7 +20,7 @@
 #define DEFAULT_TITLE "plot title"
 #define DEFAULT_X_LABEL "x-axis"
 #define DEFAULT_Y_LABEL "y-axis"
-#define DOT_SIZE 3
+#define DOT_SIZE 2
 #define GRID_DENSITY 10
 
 // colours in hex 
