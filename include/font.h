@@ -1,4 +1,5 @@
-
+#ifndef FONT_H
+#define FONT_H
 #include <stdint.h>
 typedef struct {
     size_t width, height;
@@ -351,3 +352,5 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
 //     .width = FONT_WIDTH,
 //     .height = FONT_HEIGHT,
 // };
+
+#endif

@@ -12,7 +12,7 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
-#include "font.c"
+#include "font.h"
 
 // DEFINITIONS
 // image resolution
