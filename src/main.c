@@ -14,7 +14,7 @@ int main(void){
         yarr[i] = 2 + (-sin(point) + cos(point)*cos(point))*i;
     }
     xlabel("radians");
-    ylabel("");
+    // ylabel("");
     title("random sinusoidal");
     path("out/myplot.png"); 
     grid(15); 
