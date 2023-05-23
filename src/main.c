@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "plotting.c"
+
 #define N 5000
 
 int main(void){

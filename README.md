@@ -4,10 +4,15 @@
 
 ```c
 xlabel(char[] xlabel_text) // optional - adds a label to the x axis, defaults to "x-axis"
+
 ylabel(char[] ylabel_text) // optional - adds a label to the y axis, defaults to "y-axis"
+
 title(char[] title_text) // optional - adds a plot title, defaults to "plot title"
+
 grid(int grid_density) // optional - adds a grid in the density of the passed integer, defaults to 10
+
 path(char file_path[]) // optional - set the file path and name, defaults to "plot.png"
+
 plot(float x_values[],float y_values[],int size) // plots arrays, y against x, pass shared size of arrays
 ```
 
