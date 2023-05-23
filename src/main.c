@@ -5,13 +5,14 @@
 
 int main(void){
     // test plot
-    int reps = 15;
+    int reps = 10;
     float xarr[N];
     float yarr[N];
     for (int i = 0; i < N; ++i){
-        float x = (2*PI*i*reps)/N;
+        float x = (2*PI*(i - N/2)*reps)/N;
         xarr[i] = i;
-        yarr[i] = cos(x/6)*cos(x*PI/6);
+        if (x != 0)
+            yarr[i] = sinh(x); 
     }
     xlabel("radians");
     // ylabel("");
