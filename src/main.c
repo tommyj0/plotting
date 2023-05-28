@@ -10,9 +10,9 @@ int main(void){
     float xarr[N];
     float yarr[N];
     for (int i = 0; i < N; ++i){
-        float point = (2*PI*i*reps)/N;
+        float point = (2*PI*i*reps)/N - PI;
         xarr[i] = i;
-        yarr[i] = 2 + (-sin(point) + cos(point)*cos(point))*i;
+        yarr[i] = 1.0f / (1.0f + expf(2*point));
     }
     xlabel("radians");
     // ylabel("");
