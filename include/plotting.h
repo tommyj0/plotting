@@ -35,7 +35,7 @@
 #define COLOR_GREY  0xFFA0A0A0
 #define COLOR_DARKGREY 0xFF505050
 
-// useless typedefs
+// useless typedef
 typedef uint32_t Colour32;
 
 void xlabel(const char text[]);
