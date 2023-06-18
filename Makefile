@@ -1,4 +1,5 @@
+# SHELL=cmd
 all:
-	gcc -Wall -Wextra -o bin/main src/*.c -lm -std=c17 -I include
-
+	gcc src/*.c -lm -std=c17 -I include -Wall -Wextra -o bin/main 
 	.\bin\main.exe
+	cmd /C out\myplot.png

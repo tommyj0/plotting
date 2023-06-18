@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <math.h>
-#include "plotting.c"
-
+#include "plotting.h"
 #define N 5000
 
 int main(void){
     // test plot
-    int reps = 1;
+    int reps = 10;
     float xarr[N];
     float yarr[N];
     for (int i = 0; i < N; ++i){
-        float point = (2*PI*i*reps)/N - PI;
+        float x = (2*PI*(i - N/2)*reps)/N;
         xarr[i] = i;
-        yarr[i] = 1.0f / (1.0f + expf(2*point));
+        if (x != 0)
+            yarr[i] = sinh(x); 
     }
     xlabel("radians");
     // ylabel("");
