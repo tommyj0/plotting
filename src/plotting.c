@@ -130,7 +130,7 @@ void save_image_as_png(const char *path){
     }
     if (i == 4){
         stbi_write_jpg(path, WIDTH, HEIGHT, 3, image_write, 100);
-        printf("-- JPEG file successfully created and saved as %s --", path);
+        printf("-- JPEG file successfully created and saved as %s --\n", path);
         free(image_write);
         return;
     }
@@ -141,7 +141,7 @@ void save_image_as_png(const char *path){
     }
     if (j == 4){
         stbi_write_png(path, WIDTH, WIDTH, CHANNEL_NUM, image_write, WIDTH * CHANNEL_NUM);
-        printf("-- PNG file successfully created and saved as %s --", path);
+        printf("-- PNG file successfully created and saved as %s --\n", path);
         free(image_write);
         return;
     }
