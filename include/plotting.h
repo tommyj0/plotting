@@ -1,5 +1,4 @@
-#ifndef PLOTTING_H
-#define PLOTTING_H
+#pragma once
 
 #include <stdint.h>
 
@@ -25,7 +24,6 @@
 
 // colours in hex 
 // 0xAABBGGRR
-// standard is RR GG BB 
 #define COLOR_WHITE 0xFFFFFFFF
 #define COLOR_BLACK 0xFF000000
 #define COLOR_RED   0xFF0000FF
@@ -38,11 +36,10 @@
 // useless typedef
 typedef uint32_t Colour32;
 
+// user functions
 void xlabel(const char text[]);
 void ylabel(const char text[]);
 void title(const char text[]);
 void grid(int input_density);
 void path(char new_path[]);
 void plot(float xarr[], float yarr[], int size_array);
-
-#endif

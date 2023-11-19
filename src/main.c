@@ -12,11 +12,11 @@ int main(void){
         float x = (2*PI*(i - N/2)*reps)/N;
         xarr[i] = i;
         if (x != 0)
-            yarr[i] = sinh(x); 
+            yarr[i] = 1/cosh(x); 
     }
     xlabel("radians");
     // ylabel("");
-    title("random sinusoidal");
+    title("abcdefghijklmnopqrstuvxyz");
     path("out/myplot.png"); 
     grid(15); 
     plot(xarr,yarr,N); // plot called last
