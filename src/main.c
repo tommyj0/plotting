@@ -16,7 +16,7 @@ int main(void){
             yarr[i] = 1/cosh(x); 
     }
 
-    xlabel("testing new function");
+    xlabel("testing new");
     // ylabel("");
     title("this is a graph");
     path("out/myplot.png"); 

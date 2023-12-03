@@ -205,11 +205,11 @@ void plot_scatter(float x[], float y[], Colour32 colour) {
   }
 }
 
-void draw_text(const char *label, const int font_size, int ypos, int xpos, const char *orientation) {
+void draw_text(const char *label, const int font_size, int ypos, int xpos, char orientation) {
 
   int label_len = (int)strlen(label);
   length_check(label_len, label);
-  if (*orientation == 'h')
+  if (orientation == 'h'){
   xpos = xpos - (label_len * font_size * 6) / 2;
 
   for (int i = 0; i < label_len; ++i, xpos += 6 * font_size) {
@@ -222,6 +222,7 @@ void draw_text(const char *label, const int font_size, int ypos, int xpos, const
         }
       }
     }
+  }
   }
 }
 
