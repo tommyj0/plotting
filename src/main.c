@@ -8,15 +8,17 @@ int main(void){
     int reps = 10;
     float xarr[N];
     float yarr[N];
+
     for (int i = 0; i < N; ++i){
         float x = (2*PI*(i - N/2)*reps)/N;
         xarr[i] = i;
         if (x != 0)
             yarr[i] = 1/cosh(x); 
     }
-    xlabel("radians");
+
+    xlabel("testing new function");
     // ylabel("");
-    title("abcdefghijklmnopqrstuvxyz");
+    title("this is a graph");
     path("out/myplot.png"); 
     grid(15); 
     plot(xarr,yarr,N); // plot called last

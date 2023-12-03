@@ -32,36 +32,31 @@ const int border_area = BORDER_AREA;
 const int label_font_size = 4;
 const int title_font_size = 6;
 
+// USER FUNCTIONS
 void xlabel(const char text[]) {
-  // function to be called adding an x-axis label
   if (text[0] != '\0')
     strcpy(plot_xlabel, text);
 }
 
 void ylabel(const char text[]) {
-  // function to be called adding a y-axis label
   if (text[0] != '\0')
     strcpy(plot_ylabel, text);
 }
 
 void title(const char text[]) {
-  // function to be called adding a title
   if (text[0] != '\0')
     strcpy(plot_title, text);
 }
 
-void path(char new_path[]) {
-  // function to be called to change the path and file name
-  strcpy(file_path, new_path);
-}
+void path(char new_path[]) { strcpy(file_path, new_path); }
 
 void grid(int input_density) {
-  // function to be called to change the grid density
   if (input_density != 0)
     g_density = input_density;
   grid_on = 1;
 }
 
+// NON-USER FUNCTIONS
 void draw_grid(Colour32 colour) {
   // drawing the grid according to the given density
   if (grid_on == 0) // check if grid() has been called
@@ -77,7 +72,6 @@ void draw_grid(Colour32 colour) {
 }
 
 void draw_background(Colour32 color) {
-  // fill image array with selected color
   for (size_t y = 0; y < HEIGHT; ++y) {
     for (size_t x = 0; x < WIDTH; ++x) {
       image[y][x] = color;
@@ -97,8 +91,6 @@ void draw_border(Colour32 colour) {
 }
 
 void save_image_as_png(const char *path) {
-  // converting the 2D array into a 1D array that can be converted to a png/jpg
-  // file
   uint8_t *image_write;
   int image_size = width * height * CHANNEL_NUM;
   image_write = malloc(image_size * sizeof(uint8_t));
@@ -169,29 +161,32 @@ float min_value(float input_array[]) {
   return min;
 }
 
-void length_check(int len, char spec[]) {
+void length_check(int len, const char spec[]) {
   // check the length of a string and through an error/warning if needed
   int max_len = 33;
   int shit_length = 25;
   if (len > max_len) {
     printf("ERROR: %s is too long - shorten the string to less than %d\n", spec,
-           max_len);
+           shit_length);
     exit(1);
   } else if (len > shit_length) {
-    printf(
-        "WARNING: %s is kinda long - shorten it so it doesn't look like shit\n",
-        spec);
+    printf("WARNING: %s is kinda long - make it less than %d chars it so it "
+           "doesn't look like shit\n",
+           spec, shit_length);
   }
 }
 
 void plot_scatter(float x[], float y[], Colour32 colour) {
   // plots the given points individually
   int xval, yval;
+
   for (int i = 0; i < array_length; ++i) {
+
     float min_x = min_value(x);
     float max_x = max_value(x);
     float min_y = min_value(y);
     float max_y = max_value(y);
+
     if (min_x == max_x)
       xval = plot_area / 2;
     else
@@ -210,28 +205,33 @@ void plot_scatter(float x[], float y[], Colour32 colour) {
   }
 }
 
-void draw_text(const char *label, const int font_size, int ypos, int xpos){
+void draw_text(const char *label, const int font_size, int ypos, int xpos, const char *orientation) {
 
+  int label_len = (int)strlen(label);
+  length_check(label_len, label);
+  if (*orientation == 'h')
+  xpos = xpos - (label_len * font_size * 6) / 2;
+
+  for (int i = 0; i < label_len; ++i, xpos += 6 * font_size) {
+
+    for (int x = 0; x < 5 * font_size; ++x) {
+      for (int y = 0; y < 6 * font_size; ++y) {
+        if (default_glyphs[(unsigned)*(label + i)][y / font_size]
+                          [x / font_size]) {
+          image[y + ypos][x + xpos] = COLOR_BLACK;
+        }
+      }
+    }
+  }
 }
 
 void add_text(const char *xlabel, const char *ylabel, const char *title) {
   // function draws all the required text
   // adding an x-axis label
+  // TODO: make a text function that gets called for each label/title
   int ypos, xpos;
   int label_len = (int)strlen(xlabel);
-  length_check(label_len, "x-axis label");
-
-  ypos = 920;
-  xpos = 500 - (label_len * label_font_size * 6) / 2;
-  for (int i = 0; i < label_len; ++i, xpos += 6 * label_font_size) {
-    for (int x = 0; x < 5 * label_font_size; ++x) {
-      for (int y = 0; y < 6 * label_font_size; ++y) {
-        if (default_glyphs[(unsigned)*(xlabel + i)][y / label_font_size]
-                          [x / label_font_size])
-          image[y + ypos][x + xpos] = COLOR_BLACK;
-      }
-    }
-  }
+  draw_text(xlabel, label_font_size, 920, 500,'h');
   // adding a y-axis label
   label_len = (int)strlen(ylabel);
   length_check(label_len, "y-axis label");
@@ -248,20 +248,7 @@ void add_text(const char *xlabel, const char *ylabel, const char *title) {
     }
   }
   // adding a title
-  label_len = (int)strlen(title);
-  length_check(label_len, "title");
-
-  ypos = 50;
-  xpos = 500 - (label_len * title_font_size * 6) / 2;
-  for (int i = 0; i < label_len; ++i, xpos += 6 * title_font_size) {
-    for (int x = 0; x < 5 * title_font_size; ++x) {
-      for (int y = 0; y < 6 * title_font_size; ++y) {
-        if (default_glyphs[(unsigned)*(title + i)][y / title_font_size]
-                          [x / title_font_size])
-          image[y + ypos][x + xpos] = COLOR_BLACK;
-      }
-    }
-  }
+  draw_text(title, title_font_size, 50, 500, 'h');
 }
 
 /*--------------------------------------------------------------*/
@@ -271,10 +258,10 @@ void add_text(const char *xlabel, const char *ylabel, const char *title) {
 void plot(float xarr[], float yarr[], int size_array) {
   // input should be of the form - plot(x array, y array, size of array)
   array_length = size_array;
-  draw_background(COLOR_GREY); // fill in background
-  draw_border(COLOR_BLACK);    // draw a plot area
-  draw_grid(COLOR_DARKGREY);   // draw a grid if requested
-  add_text(plot_xlabel, plot_ylabel, plot_title);
-  plot_scatter(xarr, yarr, COLOR_PURPLE); // plot individual points
-  save_image_as_png(file_path);           // convert image to a ppm output
+  draw_background(COLOR_GREY);                    // fill in background
+  draw_border(COLOR_BLACK);                       // draw a plot area
+  draw_grid(COLOR_DARKGREY);                      // draw a grid if requested
+  add_text(plot_xlabel, plot_ylabel, plot_title); // wonder what this one does
+  plot_scatter(xarr, yarr, COLOR_PURPLE);         // plot individual points
+  save_image_as_png(file_path);                   // convert image to a png output
 }
