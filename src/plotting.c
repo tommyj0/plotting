@@ -164,15 +164,15 @@ float min_value(float input_array[]) {
 void length_check(int len, const char spec[]) {
   // check the length of a string and through an error/warning if needed
   int max_len = 33;
-  int shit_length = 25;
+  int warning_length = 25;
   if (len > max_len) {
     printf("ERROR: %s is too long - shorten the string to less than %d\n", spec,
-           shit_length);
+           warning_length);
     exit(1);
-  } else if (len > shit_length) {
+  } else if (len > warning_length) {
     printf("WARNING: %s is kinda long - make it less than %d chars it so it "
-           "doesn't look like shit\n",
-           spec, shit_length);
+           "doesn't run off the edge\n",
+           spec, warning_length);
   }
 }
 
