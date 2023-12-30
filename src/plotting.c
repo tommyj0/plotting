@@ -1,12 +1,12 @@
-#include <assert.h>
-#include <errno.h>
-#include <math.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
+#include <errno.h>
+#include <math.h>
 
 #define STBI_MSC_SECURE_CRT
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -161,7 +161,7 @@ float min_value(float input_array[]) {
   return min;
 }
 
-void length_check(int len, const char spec[]) {
+void check_length(int len, const char spec[]) {
   // check the length of a string and through an error/warning if needed
   int max_len = 33;
   int warning_length = 25;
@@ -208,48 +208,44 @@ void plot_scatter(float x[], float y[], Colour32 colour) {
 void draw_text(const char *label, const int font_size, int ypos, int xpos, char orientation) {
 
   int label_len = (int)strlen(label);
-  length_check(label_len, label);
+  check_length(label_len, label);
   if (orientation == 'h'){
-  xpos = xpos - (label_len * font_size * 6) / 2;
+    xpos = xpos - (label_len * font_size * 6) / 2;
 
-  for (int i = 0; i < label_len; ++i, xpos += 6 * font_size) {
+    for (int i = 0; i < label_len; ++i, xpos += 6 * font_size) {
 
-    for (int x = 0; x < 5 * font_size; ++x) {
-      for (int y = 0; y < 6 * font_size; ++y) {
-        if (default_glyphs[(unsigned)*(label + i)][y / font_size]
-                          [x / font_size]) {
-          image[y + ypos][x + xpos] = COLOR_BLACK;
+      for (int x = 0; x < 5 * font_size; ++x) {
+        for (int y = 0; y < 6 * font_size; ++y) {
+          if (default_glyphs[(unsigned)*(label + i)][y / font_size]
+                            [x / font_size]) {
+            image[y + ypos][x + xpos] = COLOR_BLACK;
+          }
         }
       }
     }
   }
+  else if (orientation == 'v'){
+
+    ypos = 500 + (label_len * font_size * 5) / 2;
+    xpos = 50;
+    for (int i = 0; i < label_len; ++i, ypos -= 6 * font_size) {
+      for (int x = 0; x < 6 * font_size; ++x) {
+        for (int y = 0; y < 5 * font_size; ++y) {
+          if (default_glyphs[(unsigned)*(label + i)][x / font_size]
+                            [4 - y / font_size])
+            image[ypos + y][xpos + x] = COLOR_BLACK;
+        }
+      }
+    }
   }
 }
 
 void add_text(const char *xlabel, const char *ylabel, const char *title) {
   // function draws all the required text
-  // adding an x-axis label
-  // TODO: make a text function that gets called for each label/title
-  int ypos, xpos;
-  int label_len = (int)strlen(xlabel);
-  draw_text(xlabel, label_font_size, 920, 500,'h');
-  // adding a y-axis label
-  label_len = (int)strlen(ylabel);
-  length_check(label_len, "y-axis label");
 
-  ypos = 500 + (label_len * label_font_size * 5) / 2;
-  xpos = 50;
-  for (int i = 0; i < label_len; ++i, ypos -= 6 * label_font_size) {
-    for (int x = 0; x < 6 * label_font_size; ++x) {
-      for (int y = 0; y < 5 * label_font_size; ++y) {
-        if (default_glyphs[(unsigned)*(ylabel + i)][x / label_font_size]
-                          [4 - y / label_font_size])
-          image[ypos + y][xpos + x] = COLOR_BLACK;
-      }
-    }
-  }
-  // adding a title
-  draw_text(title, title_font_size, 50, 500, 'h');
+  draw_text(xlabel, label_font_size, 920, 500,'h'); // adding an x-axis label
+  draw_text(ylabel, label_font_size, 50, 500,'v'); // adding a y-axis label
+  draw_text(title, title_font_size, 50, 500, 'h'); // adding a title
 }
 
 /*--------------------------------------------------------------*/

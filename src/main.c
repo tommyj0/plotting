@@ -5,20 +5,21 @@
 
 int main(void){
     // test plot
-    int reps = 10;
+    int reps = 2;
     float xarr[N];
     float yarr[N];
+    float y,x;
 
-    for (int i = 0; i < N; ++i){
-        float x = (2*PI*(i - N/2)*reps)/N;
-        xarr[i] = i;
-        if (x != 0)
-            yarr[i] = 1/cosh(x); 
+    for (float i = -N/2; i < N/2; ++i){
+      x = reps*i/N;
+      y = reps*(5*x*x*x + 4*x*x);
+      xarr[(int)i + N/2] = i;
+      yarr[(int)i + N/2] = y; 
     }
 
     xlabel("testing new");
     // ylabel("");
-    title("this is a graph");
+    title("shit graph");
     path("out/myplot.png"); 
     grid(15); 
     plot(xarr,yarr,N); // plot called last
