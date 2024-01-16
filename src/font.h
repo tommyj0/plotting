@@ -7,8 +7,10 @@ typedef struct {
 
 #define FONT_HEIGHT 6
 #define FONT_WIDTH 6
-static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
-    ['a'] = {
+static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = 
+{
+    ['a'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 0, 0},
         {0, 0, 0, 1, 0},
@@ -16,7 +18,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 1, 0},
     },
-    ['b'] = {
+    ['b'] = 
+    {
         {1, 0, 0, 0, 0},
         {1, 0, 0, 0, 0},
         {1, 1, 1, 0, 0},
@@ -24,7 +27,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {1, 1, 1, 0, 0},
     },
-    ['c'] = {
+    ['c'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
@@ -32,7 +36,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['d'] = {
+    ['d'] = 
+    {
         {0, 0, 0, 1, 0},
         {0, 1, 1, 1, 0},
         {1, 0, 0, 1, 0},
@@ -40,7 +45,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 1, 0},
     },
-    ['e'] = {
+    ['e'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
@@ -48,7 +54,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 0, 0},
         {0, 1, 1, 1, 0},
     },
-    ['f'] = {
+    ['f'] = 
+    {
         {0, 0, 1, 1, 0},
         {0, 1, 0, 0, 0},
         {1, 1, 1, 1, 0},
@@ -56,7 +63,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 0, 0, 0},
         {0, 1, 0, 0, 0},
     },
-    ['g'] = {
+    ['g'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
@@ -64,7 +72,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['h'] = {
+    ['h'] = 
+    {
         {1, 0, 0, 0, 0},
         {1, 0, 0, 0, 0},
         {1, 1, 1, 0, 0},
@@ -72,7 +81,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
     },
-    ['i'] = {
+    ['i'] = 
+    {
         {0, 0, 1, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 1, 0, 0},
@@ -88,7 +98,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['k'] = {
+    ['k'] = 
+    {
         {0, 1, 0, 0, 0},
         {0, 1, 0, 0, 0},
         {0, 1, 0, 1, 0},
@@ -96,7 +107,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 1, 0, 0},
         {0, 1, 0, 1, 0},
     },
-    ['l'] = {
+    ['l'] = 
+    {
         {0, 1, 1, 0, 0},
         {0, 0, 1, 0, 0},
         {0, 0, 1, 0, 0},
@@ -104,7 +116,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 1, 0, 0},
         {0, 1, 1, 1, 0},
     },
-    ['m'] = {
+    ['m'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 1, 0, 1, 0},
         {1, 0, 1, 0, 1},
@@ -112,7 +125,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 1, 0, 1},
         {1, 0, 1, 0, 1},
     },
-    ['n'] = {
+    ['n'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
@@ -120,7 +134,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
     },
-    ['o'] = {
+    ['o'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
@@ -128,7 +143,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['p'] = {
+    ['p'] = 
+    {
         {1, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -136,7 +152,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 0, 0},
         {1, 0, 0, 0, 0},
     },
-    ['q'] = {
+    ['q'] = 
+    {
         {0, 1, 1, 1, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -144,7 +161,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 1, 0},
         {0, 0, 0, 1, 0},
     },
-    ['r'] = {
+    ['r'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 1, 1, 0},
         {1, 1, 0, 0, 1},
@@ -152,7 +170,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 0, 0},
         {1, 0, 0, 0, 0},
     },
-    ['s'] = {
+    ['s'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 1, 1, 1, 0},
         {1, 0, 0, 0, 0},
@@ -160,7 +179,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 1, 0},
         {1, 1, 1, 0, 0},
     },
-    ['t'] = {
+    ['t'] = 
+    {
         {0, 1, 0, 0, 0},
         {1, 1, 1, 1, 0},
         {0, 1, 0, 0, 0},
@@ -168,7 +188,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 0, 1, 0},
         {0, 0, 1, 0, 0},
     },
-    ['u'] = {
+    ['u'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -176,7 +197,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 1, 0},
     },
-    ['v'] = {
+    ['v'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 0, 0, 1},
         {1, 0, 0, 0, 1},
@@ -184,7 +206,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 0, 1, 0},
         {0, 0, 1, 0, 0},
     },    
-    ['w'] = {
+    ['w'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 0, 0, 1},
         {1, 0, 1, 0, 1},
@@ -192,7 +215,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 1, 0, 1},
         {0, 1, 1, 1, 1},
     },
-    ['x'] = {
+    ['x'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 0, 0, 1},
         {0, 1, 0, 1, 0},
@@ -200,7 +224,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 0, 1, 0},
         {1, 0, 0, 0, 1},
     },    
-    ['y'] = {
+    ['y'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -208,7 +233,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },  
-    ['z'] = {
+    ['z'] = 
+    {
         {0, 0, 0, 0, 0},
         {1, 1, 1, 1, 1},
         {0, 0, 0, 1, 0},
@@ -244,7 +270,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
     ['Y'] = {{0}},
     ['Z'] = {{0}},
 
-    ['0'] = {
+    ['0'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -252,7 +279,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['1'] = {
+    ['1'] = 
+    {
         {0, 0, 1, 0, 0},
         {0, 1, 1, 0, 0},
         {0, 0, 1, 0, 0},
@@ -260,7 +288,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 1, 0, 0},
         {0, 1, 1, 1, 0},
     },
-    ['2'] = {
+    ['2'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {0, 0, 0, 1, 0},
@@ -268,7 +297,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 0, 0},
         {1, 1, 1, 1, 0},
     },
-    ['3'] = {
+    ['3'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {0, 0, 1, 0, 0},
@@ -276,7 +306,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['4'] = {
+    ['4'] = 
+    {
         {0, 0, 1, 1, 0},
         {0, 1, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -284,7 +315,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 1, 0},
         {0, 0, 0, 1, 0},
     },
-    ['5'] = {
+    ['5'] = 
+    {
         {1, 1, 1, 0, 0},
         {1, 0, 0, 0, 0},
         {1, 1, 1, 0, 0},
@@ -292,7 +324,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['6'] = {
+    ['6'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 0, 0},
         {1, 1, 1, 0, 0},
@@ -300,7 +333,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
     },
-    ['7'] = {
+    ['7'] = 
+    {
         {1, 1, 1, 1, 0},
         {0, 0, 0, 1, 0},
         {0, 0, 1, 0, 0},
@@ -308,7 +342,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 0, 0, 0},
         {0, 1, 0, 0, 0},
     },
-    ['8'] = {
+    ['8'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {0, 1, 1, 0, 0},
@@ -317,7 +352,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 1, 0, 0},
 
     },
-    ['9'] = {
+    ['9'] = 
+    {
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 0},
         {1, 0, 0, 1, 0},
@@ -326,7 +362,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 1, 1, 0, 0},
     },
 
-    [','] = {
+    [','] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
@@ -335,7 +372,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 1, 0, 0},
     },
 
-    ['.'] = {
+    ['.'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
@@ -343,7 +381,8 @@ static char default_glyphs[128][FONT_HEIGHT][FONT_WIDTH] = {
         {0, 0, 0, 0, 0},
         {0, 0, 1, 0, 0},
     },
-    ['-'] = {
+    ['-'] = 
+    {
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
